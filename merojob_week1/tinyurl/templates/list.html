@@ -1,0 +1,25 @@
+<!-- list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shortened URLs List</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:8000/tiny/find/">Find</a>
+    <h1>List of Shortened URLs</h1>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <ul>
+        {% for shortened_url in shortened_urls %}
+            <li>
+                <strong>Original URL:</strong> {{ shortened_url.original_url }}<br>
+                <strong>Shortened URL:</strong> {{ shortened_url.custom_url }}<br>
+                <strong>Created At:</strong> {{ shortened_url.created_at }}<br>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+</body>
+</html>

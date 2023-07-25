@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shorten URL</title>
+</head>
+<body>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_url">Enter the URL to shorten:</label>
+        <input type="text" name="input_url" id="input_url">
+        <label for="custom_url">Enter a custom short URL (optional):</label>
+        <input type="text" name="custom_url" id="custom_url">
+        <input type="submit" value="Shorten">
+    </form>
+</body>
+</html>

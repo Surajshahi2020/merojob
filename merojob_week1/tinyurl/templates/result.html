@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:8000/tiny/list/">List</a>
+    {% if shortened_url %}
+        <p>Shortened URL: <a href="{{ shortened_url }}">{{ shortened_url }}</a></p>
+    {% endif %}
+</body>
+</html>

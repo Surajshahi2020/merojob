@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find URL</title>
+</head>
+<body>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="tiny_url">Enter the tiny URL to find the original URL:</label>
+        <input type="text" name="tiny_url" id="tiny_url">
+        <input type="submit" value="Find">
+    </form>
+</body>
+</html>
