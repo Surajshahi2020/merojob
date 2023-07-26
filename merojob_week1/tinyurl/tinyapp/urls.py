@@ -4,6 +4,6 @@ urlpatterns = [
     path('create/',shorten_url_view,name="create"),
     path('find/',find_url_view,name="find"),
     path('list/',list_view,name="list"),
-    path("findurl/",find_short_view,name="find in url")
+    path("<str:url>",find_short_view,name="find in url")
 
 ]

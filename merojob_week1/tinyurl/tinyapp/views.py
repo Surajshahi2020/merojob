@@ -38,12 +38,11 @@ def list_view(request):
     shortened_urls = ShortenedURLStore.objects.all()
     return render(request, "list.html", {"shortened_urls": shortened_urls})
 
-def find_short_view(request):
-    short_param = request.GET.get('short')
-    if not short_param:
+def find_short_view(request,url):
+    if not url:
         return HttpResponse("Missing 'short' parameter in the URL.", status=400)
     try:
-        shortened_url = ShortenedURLStore.objects.filter(custom_url=short_param)
+        shortened_url = ShortenedURLStore.objects.filter(custom_url=url)
         if shortened_url.exists():
             shortened_url = shortened_url.first()
             return HttpResponseRedirect(shortened_url.original_url)

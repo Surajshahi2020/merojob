@@ -6,11 +6,11 @@ from tinyapp.models import ShortenedURLStore
 
 def generate_url(url, custom_url=None):
         if custom_url:
-            custom_url = "https://short.url/" + custom_url
+            custom_url = custom_url
             return custom_url
         else:
             md5_hash = hashlib.md5(url.encode()).hexdigest()
-            short_url = "https://short.url/" + md5_hash[:5]
+            short_url =  md5_hash[:5]
             return short_url
         
 def shorten_url(input_url, custom_url):

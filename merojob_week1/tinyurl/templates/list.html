@@ -14,8 +14,9 @@
     <ul>
         {% for shortened_url in shortened_urls %}
             <li>
+                {{ request.build_absolute_uri }}
                 <strong>Original URL:</strong> {{ shortened_url.original_url }}<br>
-                <strong>Shortened URL:</strong> {{ shortened_url.custom_url }}<br>
+                <strong>Shortened URL:</strong> http://127.0.0.1:8000/{{shortened_url.custom_url}}<br>
                 <strong>Created At:</strong> {{ shortened_url.created_at }}<br>
             </li>
             <br>
